@@ -1,0 +1,14 @@
+doctype html
+html(lang="en" dir="ltr")
+  head
+    meta(charset="utf-8")
+    link(rel="stylesheet" href="css/styles.css")
+    title= title
+  body
+    .header
+      .right
+        a(href="/home") HOME
+      .left
+        a.signup.btn(href="/signup") SIGNUP
+        a.signin.btn(href="/signin") SIGNIN
+    block body
