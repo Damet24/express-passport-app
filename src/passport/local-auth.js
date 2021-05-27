@@ -64,7 +64,7 @@ passport.use('local-signin', new LocalStrategy({
       })
     }
     else{
-      done(null, false, req.flash('signinMessage','the user net exists'))
+      done(null, false, req.flash('signinMessage','the user not exists'))
     }
   })
 }))

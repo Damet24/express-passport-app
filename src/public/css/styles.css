@@ -7,8 +7,10 @@
 }
 
 body {
+  min-height: 100vh;
   font-family: Arial;
-  background-color: #2568cc;
+  background: rgb(33,22,222);
+  background: linear-gradient(145deg, rgba(33,22,222,1) 0%, rgba(37,37,200,1) 35%, rgba(53,184,210,1) 100%);
 }
 
 a {
@@ -82,4 +84,11 @@ a {
   color: white;
   line-height: center;
   text-align: center;
+}
+
+.error-msg {
+  padding: 5px;
+  text-align: center;
+  background-color: #ffb8b3;
+  color: #ed372b;
 }

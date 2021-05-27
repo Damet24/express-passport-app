@@ -1,10 +1,10 @@
 extends ./layouts/main.pug
 
 block body
-  if signupMessage
-    p= signupMessage
   form.form(action="/signup" method="POST")
-    input.entry(type="email" name="email" placeholder="type your email")
+    if signupMessage.length > 0
+      p.error-msg= signupMessage
     input.entry(type="text" name="name" placeholder="type your name")
+    input.entry(type="email" name="email" placeholder="type your email")
     input.entry(type="password" name="password" placeholder="type your password")
     input.btn.submit(type="submit" value="submit")

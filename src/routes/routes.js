@@ -41,7 +41,7 @@ router.use((req, res, next) => {
 })
 
 router.get('/home', (req, res, next) => {
-  res.send('home')
+  res.render('home')
 })
 
 

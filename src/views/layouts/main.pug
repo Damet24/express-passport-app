@@ -9,6 +9,9 @@ html(lang="en" dir="ltr")
       .right
         a(href="/home") HOME
       .left
-        a.signup.btn(href="/signup") SIGNUP
-        a.signin.btn(href="/signin") SIGNIN
+        if user
+          a.btn(href="/logout") EXIT
+        else
+          a.signup.btn(href="/signup") SIGNUP
+          a.signin.btn(href="/signin") SIGNIN
     block body

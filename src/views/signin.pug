@@ -1,9 +1,9 @@
 extends ./layouts/main.pug
 
 block body
-  if signinMessage
-    p= signinMessage
   form.form(action="/signin" method="POST")
+    if signinMessage.length > 0
+      p.error-msg= signinMessage
     input.entry(type="email" name="email" placeholder="type your email")
     input.entry(type="password" name="password" placeholder="type your password")
     input.btn.submit(type="submit" value="submit")
