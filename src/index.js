@@ -12,8 +12,6 @@ app.set('port', process.env.PORT || 3000)
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, './views'))
 
-const bcrypt = require('bcrypt')
-const saltRounds = 10;
 require('./passport/local-auth')
 
 //middlewares
@@ -33,6 +31,7 @@ app.use(passport.session())
 app.use((req, res, next) =>{
   app.locals.signupMessage = req.flash('signupMessage')
   app.locals.signinMessage = req.flash('signinMessage')
+  app.locals.successMessage = req.flash('successMessage')
   app.locals.user = req.user
   next()
 })

@@ -1,4 +1,10 @@
 extends ./layouts/main.pug
 
 block body
-  h1 home
+  .container
+    .card
+      .user
+        i(class="fas fa-user")
+      h2= user[0].name
+      p #{user[0].email}
+      p #{user[0].phone_number}

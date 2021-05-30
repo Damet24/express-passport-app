@@ -4,6 +4,8 @@ block body
   form.form(action="/signin" method="POST")
     if signinMessage.length > 0
       p.error-msg= signinMessage
+    if successMessage.length > 0
+      p.msg= successMessage
     input.entry(type="email" name="email" placeholder="type your email")
     input.entry(type="password" name="password" placeholder="type your password")
     input.btn.submit(type="submit" value="submit")

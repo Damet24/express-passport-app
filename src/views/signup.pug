@@ -4,7 +4,10 @@ block body
   form.form(action="/signup" method="POST")
     if signupMessage.length > 0
       p.error-msg= signupMessage
+    if successMessage.length > 0
+      p.msg= successMessage
     input.entry(type="text" name="name" placeholder="type your name")
+    input.entry(type="number" name="phone" placeholder="type your phone number")
     input.entry(type="email" name="email" placeholder="type your email")
     input.entry(type="password" name="password" placeholder="type your password")
     input.btn.submit(type="submit" value="submit")

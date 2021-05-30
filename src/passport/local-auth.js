@@ -28,11 +28,11 @@ passport.use('local-signup', new LocalStrategy({
 
       bcrypt.genSalt(saltRounds, function(err, salt) {
         bcrypt.hash(password, salt, function(err, hash) {
-          let query = `insert into users(name, email, user_password)value('${req.body.name}', '${email}', '${hash}')`
+          let query = `insert into users(name, email, user_password, phone_number)value('${req.body.name}', '${email}', '${hash}', '${req.body.phone}')`
 
           myConnection.query(query, function (err, result) {
             myConnection.query(`select id_users from users where email = '${email}'`, function (err, result) {
-              done(null, result)
+              done(null, false, req.flash('successMessage', 'Successful signup'))
             })
           })
         })
