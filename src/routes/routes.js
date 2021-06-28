@@ -2,10 +2,6 @@ const { Router } = require('express')
 const passport = require('passport');
 const router = Router()
 
-const myConnection = require('../database')
-const bcrypt = require('bcrypt')
-const saltRounds = 10;
-
 router.get('/', (req, res, next) => {
   res.render('main', {title: 'main'})
 })
